@@ -52,16 +52,21 @@ canvas, .hud .score, .hud .high, .btn{transition:all 180ms ease}
 .canvas-wrap{display:inline-block;padding:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:8px;position:relative}
 
 /* Mobile controls overlay (positioned at bottom center of canvas) */
-.mobile-controls{display:none;margin-top:12px;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.mobile-controls .dpad{display:flex;flex-direction:column;align-items:center;gap:6px}
-.mobile-controls .h-row{display:flex;gap:8px}
+.mobile-controls{display:none;margin-top:12px;align-items:center;justify-content:center;gap:12px}
 .m-btn{width:52px;height:52px;border-radius:10px;border:0;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));color:var(--text);font-size:18px;box-shadow:0 6px 18px rgba(2,6,23,0.5)}
 .m-btn:active{transform:translateY(2px);opacity:0.95}
 .m-restart{padding:8px 12px;border-radius:10px}
 
+/* Small-screen grid layout for dpad with centered restart */
 @media (max-width:680px){
-	.mobile-controls{display:flex;flex-direction:row}
+	.mobile-controls{display:grid;grid-template-columns:56px 56px 56px;grid-template-rows:56px 56px 56px;gap:10px;justify-content:center;align-items:center}
+	.grid-up{grid-column:2;grid-row:1}
+	.grid-left{grid-column:1;grid-row:2}
+	.grid-center{grid-column:2;grid-row:2;width:56px;height:56px;border-radius:12px}
+	.grid-right{grid-column:3;grid-row:2}
+	.grid-down{grid-column:2;grid-row:3}
 	.canvas-wrap{padding:6px}
 	canvas{width:100%;height:auto}
 }
+
 
