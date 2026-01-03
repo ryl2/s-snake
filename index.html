@@ -21,20 +21,16 @@
         <canvas id="game" width="600" height="400" aria-label="Snake game"></canvas>
       </div>
       <!-- mobile controls placed outside the canvas, below and centered -->
-      <div id="mobileControls" class="mobile-controls">
-        <div class="dpad">
-          <button id="btnUp" class="m-btn">▲</button>
-          <div class="h-row">
-            <button id="btnLeft" class="m-btn">◀</button>
-            <button id="btnDown" class="m-btn">▼</button>
-            <button id="btnRight" class="m-btn">▶</button>
-          </div>
-        </div>
-        <div class="mobile-actions">
-          <button id="btnRestart" class="btn m-restart">Restart</button>
-        </div>
-      </div>
     </main>
+      <!-- mobile controls placed outside the main, bottom of the page -->
+      <div id="mobileControls" class="mobile-controls">
+        <!-- 3x3 grid: . . up . . / left restart right / . . down . . -->
+        <button id="btnUp" class="m-btn grid-up">▲</button>
+        <button id="btnLeft" class="m-btn grid-left">◀</button>
+        <button id="btnDown" class="m-btn grid-down">▼</button>
+        <button id="btnRight" class="m-btn grid-right">▶</button>
+        <button id="btnRestart" class="btn m-restart grid-center">Restart</button>
+      </div>
 
     <div class="controls">Keys: Arrow / WASD — R restart — T theme — Swipe to play (mobile)</div>
 
